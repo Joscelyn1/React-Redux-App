@@ -23,7 +23,11 @@ function Day(props) {
   return (
     <Card className="day-card" style={{ maxWidth: "500px" }}>
       <CardHeader>
-        {props.index === 0 ? "Today" : week[day.getDay()]}
+        {props.index === 0
+          ? "Today"
+          : props.index === 1
+          ? "Tomorrow"
+          : week[day.getDay()]}
       </CardHeader>
       <CardImg
         width="75px"
