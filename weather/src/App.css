@@ -1,7 +1,53 @@
-.App {
-  text-align: center;
+html,
+body {
+  background-color: #41b3a3;
+  height: 100%;
 }
 
+#root {
+  background-color: #41b3a3;
+  height: 100%;
+}
+.form {
+  display: flex;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px 0;
+}
+
+.week-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.title {
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.day-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 5px;
+  width: 250px;
+  height: 375px;
+  color: black;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -29,5 +75,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 800px) {
+  .week-container {
+    flex-direction: row;
+  }
+
+  .day-card {
+    width: 175px;
   }
 }
