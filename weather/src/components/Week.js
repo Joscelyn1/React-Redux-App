@@ -8,16 +8,21 @@ function Week(props) {
   useEffect(() => {
     props.getData();
   }, []);
+  const week = Array.from(props.consolidated_weather);
   return (
-    <div className="week-container">
+    <div className="container">
+      <h1 className="title">{props.title} Weather</h1>
+
       {props.isLoading ? (
-        <Loader type="TailSpin" color="#00BFFF" height="15" width="100" />
+        <Loader type="TailSpin" color="#00BFFF" height="100" width="100" />
       ) : (
         ""
       )}
-      {props.consolidated_weather.map(day => (
-        <Day day={day} />
-      ))}
+      <div className="week-container">
+        {props.consolidated_weather.map(day => (
+          <Day day={day} index={week.indexOf(day)} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -25,7 +30,8 @@ function Week(props) {
 const mapStateToProps = state => {
   return {
     isLoading: state.isLoading,
-    consolidated_weather: state.consolidated_weather
+    consolidated_weather: state.consolidated_weather,
+    title: state.title
   };
 };
 export default connect(

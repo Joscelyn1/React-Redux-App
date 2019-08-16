@@ -3,10 +3,9 @@ body {
   height: 100%;
 }
 
-body {
-  background-image: url("https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2534&q=80");
-  background-repeat: no-repeat;
-  background-position: left top;
+#root {
+  background-color: #41b3a3;
+  height: 100%;
 }
 
 .App {
@@ -14,14 +13,37 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 20px 0;
 }
 
+.week-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.title {
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .day-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 0;
+  justify-content: center;
+  margin: 20px 5px;
   width: 250px;
+  height: 375px;
+  color: black;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -50,5 +72,15 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 800px) {
+  .week-container {
+    flex-direction: row;
+  }
+
+  .day-card {
+    width: 175px;
   }
 }

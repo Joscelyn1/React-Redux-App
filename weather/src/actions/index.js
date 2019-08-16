@@ -9,7 +9,7 @@ export const getData = () => {
     dispatch({ type: FETCH_WEATHER_DATA_START });
     axios
       .get(
-        "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/44418/"
+        "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/2442047/"
       )
       .then(res => {
         // res.data.data

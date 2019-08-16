@@ -10,10 +10,21 @@ import {
 } from "shards-react";
 
 function Day(props) {
-  console.log(props, "props");
+  const day = new Date(JSON.stringify(props.day.applicable_date));
+  const week = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
   return (
     <Card className="day-card" style={{ maxWidth: "500px" }}>
-      <CardHeader>{props.day.applicable_date}</CardHeader>
+      <CardHeader>
+        {props.index === 0 ? "Today" : week[day.getDay()]}
+      </CardHeader>
       <CardImg
         width="75px"
         src={`https://www.metaweather.com/static/img/weather/${
